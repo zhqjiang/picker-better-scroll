@@ -1,21 +1,39 @@
-import React, { useState, useRef, useEffect } from "react";
-import "./picker.scss";
+import React, {
+  FC,
+  useState,
+  useRef,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import { CSSTransition } from "react-transition-group";
 import BScroll from "@better-scroll/core";
 import Wheel from "@better-scroll/wheel";
 import MouseWheel from "@better-scroll/mouse-wheel";
-import { DATA1, DATA2, DATA3 } from "./exampleData";
+import { DATA1, DATA2, DATA3 } from "../exampleData";
+import "./picker.scss";
+import CancelSetBtnGroup from "../drawer/cancel-set-btn-group";
 BScroll.use(Wheel);
 BScroll.use(MouseWheel);
 
 const pickerData = [DATA1, DATA2, DATA3];
 
-const DoubleColumn = () => {
-  const [visible, setVisible] = useState(false);
+interface IProps {
+  visible: boolean;
+  setVisible: Dispatch<SetStateAction<boolean>>;
+  selectedText: string;
+  setSelectedText: Dispatch<SetStateAction<string>>;
+}
+
+const DoubleColumn: FC<IProps> = ({
+  visible,
+  setVisible,
+  selectedText,
+  setSelectedText,
+}) => {
   const [selectedIndexPair, setSelectedIndexPair] = useState(
     new Array(pickerData.length).fill(0)
   );
-  const [selectedText, setSelectedText] = useState("open");
 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<BScroll[]>([]);
@@ -55,13 +73,6 @@ const DoubleColumn = () => {
     }
   }, [visible, selectedIndexPair]);
 
-  const handleShow = () => {
-    if (visible) {
-      return;
-    }
-    setVisible(true);
-  };
-
   const handleHide = () => {
     setVisible(false);
   };
@@ -93,11 +104,8 @@ const DoubleColumn = () => {
   };
 
   return (
-    <div className="container view">
-      <div className="container-btn" onClick={handleShow}>
-        {selectedText}
-      </div>
-      <CSSTransition
+    <>
+      {/* <CSSTransition
         in={visible}
         classNames="picker-fade"
         timeout={300}
@@ -107,53 +115,49 @@ const DoubleColumn = () => {
         onExited={(node) => {
           node.style.display = "";
         }}
+      > */}
+      <div
+        className="picker"
+        // onClick={handleCancel}
+        onTouchMove={(e) => {
+          e.preventDefault();
+        }}
       >
+        {/* <CSSTransition in={visible} classNames="picker-move" timeout={300}> */}
         <div
-          className="picker"
-          onClick={handleCancel}
-          onTouchMove={(e) => {
-            e.preventDefault();
+          className="picker-panel"
+          onClick={(e) => {
+            e.stopPropagation();
           }}
         >
-          <CSSTransition in={visible} classNames="picker-move" timeout={300}>
-            <div
-              className="picker-panel"
-              onClick={(e) => {
-                e.stopPropagation();
-              }}
-            >
-              <div className="picker-choose border-bottom-1px">
-                <span className="cancel" onClick={handleCancel}>
-                  Cancel
-                </span>
-                <span className="confirm" onClick={handleConfirm}>
-                  Confirm
-                </span>
-                <h1 className="picker-title">Title</h1>
-              </div>
-              <div className="picker-content">
-                <div className="mask-top border-bottom-1px"></div>
-                <div className="mask-bottom border-top-1px"></div>
-                <div className="wheel-wrapper" ref={wrapperRef}>
-                  {pickerData.map((data, index) => (
-                    <div className="wheel" key={index}>
-                      <ul className="wheel-scroll">
-                        {data.map((item) => (
-                          <li key={item.text} className="wheel-item">
-                            {item.text}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+          <CancelSetBtnGroup
+            handleClose={handleCancel}
+            handleOk={handleConfirm}
+          />
+
+          <div className="picker-content">
+            <div className="mask-top border-bottom-1px"></div>
+            <div className="mask-bottom border-top-1px"></div>
+            <div className="wheel-wrapper" ref={wrapperRef}>
+              {pickerData.map((data, index) => (
+                <div className="wheel" key={index}>
+                  <ul className="wheel-scroll">
+                    {data.map((item) => (
+                      <li key={item.text} className="wheel-item select-none">
+                        {item.text}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
-              <div className="picker-footer"></div>
+              ))}
             </div>
-          </CSSTransition>
+          </div>
+          <div className="picker-footer"></div>
         </div>
-      </CSSTransition>
-    </div>
+        {/* </CSSTransition> */}
+      </div>
+      {/* </CSSTransition> */}
+    </>
   );
 };
 
