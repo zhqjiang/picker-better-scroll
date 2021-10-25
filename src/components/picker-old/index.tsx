@@ -6,7 +6,7 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-import { CSSTransition } from "react-transition-group";
+// import { CSSTransition } from "react-transition-group";
 import BScroll from "@better-scroll/core";
 import Wheel from "@better-scroll/wheel";
 import MouseWheel from "@better-scroll/mouse-wheel";
@@ -54,9 +54,9 @@ const DoubleColumn: FC<IProps> = ({
             mouseWheel: {
               speed:
                 pickerData[i].length > 400 ? 400 * 5 : pickerData[i].length * 5,
-              easeTime: 100,
+              easeTime: 200,
               discreteTime: 150,
-              dampingFactor: 0.1,
+              dampingFactor: 0.8,
             },
             useTransition: false,
             probeType: 3,
@@ -117,7 +117,7 @@ const DoubleColumn: FC<IProps> = ({
         }}
       > */}
       <div
-        className="picker"
+        className="picker select-none"
         // onClick={handleCancel}
         onTouchMove={(e) => {
           e.preventDefault();
@@ -134,7 +134,6 @@ const DoubleColumn: FC<IProps> = ({
             handleClose={handleCancel}
             handleOk={handleConfirm}
           />
-
           <div className="picker-content">
             <div className="mask-top border-bottom-1px"></div>
             <div className="mask-bottom border-top-1px"></div>

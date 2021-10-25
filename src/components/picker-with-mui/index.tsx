@@ -16,7 +16,7 @@ const PickerWithMUI = () => {
   };
 
   return (
-    <div className="container view">
+    <>
       <Button
         onClick={() => {
           setVisible(true);
@@ -38,7 +38,7 @@ const PickerWithMUI = () => {
           setVisible={setVisible}
         />
       </CancelSetDrawer>
-    </div>
+    </>
   );
 };
 
