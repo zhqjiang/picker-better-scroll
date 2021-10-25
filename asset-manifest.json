@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/picker-better-scroll/static/css/main.34452d33.chunk.css",
-    "main.js": "/picker-better-scroll/static/js/main.7c6928b6.chunk.js",
-    "main.js.map": "/picker-better-scroll/static/js/main.7c6928b6.chunk.js.map",
+    "main.js": "/picker-better-scroll/static/js/main.7fd35aaf.chunk.js",
+    "main.js.map": "/picker-better-scroll/static/js/main.7fd35aaf.chunk.js.map",
     "runtime-main.js": "/picker-better-scroll/static/js/runtime-main.830cb9ff.js",
     "runtime-main.js.map": "/picker-better-scroll/static/js/runtime-main.830cb9ff.js.map",
     "static/js/2.3ea4f487.chunk.js": "/picker-better-scroll/static/js/2.3ea4f487.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.830cb9ff.js",
     "static/js/2.3ea4f487.chunk.js",
     "static/css/main.34452d33.chunk.css",
-    "static/js/main.7c6928b6.chunk.js"
+    "static/js/main.7fd35aaf.chunk.js"
   ]
 }
