@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/picker-better-scroll/static/css/main.34452d33.chunk.css",
-    "main.js": "/picker-better-scroll/static/js/main.7fd35aaf.chunk.js",
-    "main.js.map": "/picker-better-scroll/static/js/main.7fd35aaf.chunk.js.map",
-    "runtime-main.js": "/picker-better-scroll/static/js/runtime-main.830cb9ff.js",
-    "runtime-main.js.map": "/picker-better-scroll/static/js/runtime-main.830cb9ff.js.map",
-    "static/js/2.3ea4f487.chunk.js": "/picker-better-scroll/static/js/2.3ea4f487.chunk.js",
-    "static/js/2.3ea4f487.chunk.js.map": "/picker-better-scroll/static/js/2.3ea4f487.chunk.js.map",
-    "static/js/3.a7b029bf.chunk.js": "/picker-better-scroll/static/js/3.a7b029bf.chunk.js",
-    "static/js/3.a7b029bf.chunk.js.map": "/picker-better-scroll/static/js/3.a7b029bf.chunk.js.map",
+    "main.css": "/picker-better-scroll/static/css/main.d9a148c2.chunk.css",
+    "main.js": "/picker-better-scroll/static/js/main.5a2112f9.chunk.js",
+    "main.js.map": "/picker-better-scroll/static/js/main.5a2112f9.chunk.js.map",
+    "runtime-main.js": "/picker-better-scroll/static/js/runtime-main.25e77f47.js",
+    "runtime-main.js.map": "/picker-better-scroll/static/js/runtime-main.25e77f47.js.map",
+    "static/js/2.afc78cd7.chunk.js": "/picker-better-scroll/static/js/2.afc78cd7.chunk.js",
+    "static/js/2.afc78cd7.chunk.js.map": "/picker-better-scroll/static/js/2.afc78cd7.chunk.js.map",
+    "static/js/3.b524d7a1.chunk.js": "/picker-better-scroll/static/js/3.b524d7a1.chunk.js",
+    "static/js/3.b524d7a1.chunk.js.map": "/picker-better-scroll/static/js/3.b524d7a1.chunk.js.map",
     "index.html": "/picker-better-scroll/index.html",
-    "static/css/main.34452d33.chunk.css.map": "/picker-better-scroll/static/css/main.34452d33.chunk.css.map",
-    "static/js/2.3ea4f487.chunk.js.LICENSE.txt": "/picker-better-scroll/static/js/2.3ea4f487.chunk.js.LICENSE.txt"
+    "static/css/main.d9a148c2.chunk.css.map": "/picker-better-scroll/static/css/main.d9a148c2.chunk.css.map",
+    "static/js/2.afc78cd7.chunk.js.LICENSE.txt": "/picker-better-scroll/static/js/2.afc78cd7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.830cb9ff.js",
-    "static/js/2.3ea4f487.chunk.js",
-    "static/css/main.34452d33.chunk.css",
-    "static/js/main.7fd35aaf.chunk.js"
+    "static/js/runtime-main.25e77f47.js",
+    "static/js/2.afc78cd7.chunk.js",
+    "static/css/main.d9a148c2.chunk.css",
+    "static/js/main.5a2112f9.chunk.js"
   ]
 }
