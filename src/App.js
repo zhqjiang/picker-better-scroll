@@ -5,9 +5,11 @@ import Picker from "./components/picker";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Picker />
-      </header>
+      <Picker
+        onCancel={() => {
+          console.log("onCancel");
+        }}
+      />
     </div>
   );
 }
